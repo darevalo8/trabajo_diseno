@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'proyecto/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'proyecto/css/estilos.css' %}">
+    <link rel="stylesheet" href="{% static 'proyecto/css/fonts.css' %}">
+{% endblock css %}
+
+{% block js %}
+    <script src="{% static 'proyecto/js/vendor/jquery.js' %}"></script>
+    <script src="{% static 'proyecto/js/vendor/bootstrap.min.js' %}"></script>
+    <script src="{% static 'proyecto/js/app.js' %}"></script>
+    <script src="{% static 'proyecto/js/main.js' %}"></script>
+{% endblock js %}

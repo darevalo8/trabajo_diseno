@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Listado de contratos</title>
+</head>
+<body>
+    <h1>Lista de contratos</h1>
+	<a href="{% url 'add-contratos' %}">Añadir Contrato</a>
+	{% for contratos in contrato %}
+		<ul>
+			<li>{{ contratos.employee}} <a href="{% url 'update-contratos' contratos.id %}">Actualizar</a> <a href="{% url 'delete-contratos' contratos.id %}">Eliminar</a></li>
+		</ul>
+	{% endfor %}
+</body>
+</html>

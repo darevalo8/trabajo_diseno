@@ -1,0 +1,86 @@
+{% extends "proyecto/base_proyecto.html" %}
+
+{% block title %}
+    Index
+{% endblock title %}
+
+{% block content %}
+     <header>
+        <header>
+            <div class="menu_bar">
+                <a href="#" class="bt-menu"><span class="icon-list"></span>Contracts App</a>
+            </div> 
+            <nav>
+                <ul>
+                    <li><h4 style="padding:10px; color:#fff;">Contracts App</h4></li>
+                    <li><a href="index.html"><span class="icon-suitcase"></span>Employees</a></li>
+                    <li><a href="compania.html"><span class="icon-rocket"></span>Company</a></li>
+                    <li><a href="contratos.html"><span class="icon-mail"></span>Contracts</a></li>
+                </ul>
+            </nav>
+        </header>
+    </header>
+    <div class="container">     
+        <section>
+            <article class="row">
+                <div class="col-md-2"><h3>Employees</h3></div>
+                <div class="col-md-1 col-md-offset-9">
+                    <button class="btn btn-warning" data-toggle="modal" data-target="#ventana">
+                        New
+                    </button>
+                </div>
+                <div class="modal fade" id="ventana" tabindex="-1s" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <form method="post">
+                                    <label>Create Employee</label>
+                                    {% csrf_token %}
+                                    {{form.as_p}}
+                                    <input type="submit" class="btn btn-info" value="Save">
+                                </form>
+                            </div>
+                        </div>
+                    </div>                      
+                </div>                  
+            </article><hr>
+            <article class="col-md-12">
+                <div>
+                    Toggle column:
+                    <a class="toggle-vis" data-column="0" href="#">Name</a>-
+                    <a class="toggle-vis" data-column="1" href="#">Name</a>-
+                    <a class="toggle-vis" data-column="2" href="#">Name</a>-
+                    <a class="toggle-vis" data-column="3" href="#">Name</a>-
+                    <a class="toggle-vis" data-column="4" href="#">Name</a>
+                </div>
+                <table id="example" class="display" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>hola</th>
+                            <th>hola</th>
+                            <th>hola</th>
+                            <th>hola</th>
+                            <th>hola</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>hola</th>
+                            <th>hola</th>
+                            <th>hola</th>
+                            <th>hola</th>
+                            <th>hola</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </article>
+        </section>         
+         </div><hr>
+    <footer>
+        <center>
+            <p>Todos los derechos reservados</p>
+            <p>Cali, Valle del Cauca</p>
+            <p>Agosto 2015</p>
+        </center>
+    </footer>
+{% endblock content %}
